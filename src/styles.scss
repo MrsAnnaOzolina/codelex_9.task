@@ -1,3 +1,33 @@
+*{
+  box-sizing: border-box;
+}
 body {
-  background-color: antiquewhite;
+  background-color: lightgray;
+}
+.title{
+  display: flex;
+  justify-content: center;
+}
+.cards{
+  display: grid;
+ justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  //gap: 30px 30px ;
+  
+}
+.dog{
+  background-color: #f06292;
+  width: 500px;
+  border-radius: 20px;
+  margin-top: 40px;
+  
+}
+img{
+  border-radius: 20px;
+  width: 500px;
+  height: 330px;
+ object-fit: cover;
+}
+.addNewItem{
+  margin: 70px;
 }

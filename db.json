@@ -1,0 +1,34 @@
+{
+  "dogs": [
+    {
+      "id": 1,
+      "image": "/assets/images/collie.jpg",
+      "title": "Border Collie",
+      "text": "Border Collies are good family dogs because they like a lot of activity. Busy families will need to include them in their activities, or they can become destructive when bored."
+    },
+    {
+      "id": 2,
+      "image": "assets/images/shepard.jpg",
+      "title": "Australian Shepherd",
+      "text": "Australian Shepherds are very good with children and tend to get along well with other pets. They have a very easy-going temperament, making them great family pets as well as herding animals."
+    },
+    {
+      "id": 3,
+      "image": "assets/images/retriever.jpg",
+      "title": "Golden Retriever",
+      "text": "Goldens are outgoing, trustworthy, and eager-to-please family dogs, and relatively easy to train. They take a joyous and playful approach to life and maintain this puppyish behavior into adulthood."
+    },
+    {
+      "id": 4,
+      "image": "assets/images/duchund.jpeg",
+      "title": "Dachshund",
+      "text": "Miniature dachshunds make for great family pets and are known for their curious nature and sense of humour. They love human interaction and like to be doted on."
+    },
+    {
+      "id": 5,
+      "image": "/assets/images/collie.jpg",
+      "title": "Border Collie",
+      "text": "Border Collies are good family dogs because they like a lot of activity. Busy families will need to include them in their activities, or they can become destructive when bored."
+    }
+  ]
+}
