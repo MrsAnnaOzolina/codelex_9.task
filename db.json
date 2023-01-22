@@ -29,6 +29,12 @@
       "image": "/assets/images/collie.jpg",
       "title": "Border Collie",
       "text": "Border Collies are good family dogs because they like a lot of activity. Busy families will need to include them in their activities, or they can become destructive when bored."
+    },
+    {
+      "id": 6,
+      "image": "assets/images/dog.jpg",
+      "title": "Anna",
+      "text": "Anna"
     }
   ]
 }

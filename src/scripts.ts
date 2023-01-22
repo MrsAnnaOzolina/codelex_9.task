@@ -38,11 +38,10 @@ allData.innerHTML = data;
 
 axios.get<Dogs>('http://localhost:3004/dogs').then((deleteData)=>{
     const deletebutton = document.getElementById(`data-id-${deleteData.data.id}`);
-    
-    deletebutton.addEventListener('click',()=>{
-      // axios.delete(`http://localhost:3004/dogs/${deleteData.data.id}`)
-       console.log(`http://localhost:3004/dogs/${deleteData.data.id}`);
-     }) 
+    deletebutton.addEventListener('click', ()=>{
+        axios.delete(`http://localhost:3004/dogs/${deleteData.data.id}`);
+        //   console.log(`http://localhost:3004/dogs/${deleteData.data.id}`);
+    });
 }).then(()=>{
     showData();
 
