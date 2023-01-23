@@ -20,7 +20,10 @@ body {
   width: 500px;
   border-radius: 20px;
   margin-top: 40px;
-  
+}
+.dog h3,p{
+
+  margin-left: 20px;
 }
 img{
   border-radius: 20px;
@@ -30,4 +33,7 @@ img{
 }
 .addNewItem{
   margin: 70px;
+}
+button{
+  margin: 20px;
 }
