@@ -92,3 +92,14 @@ addButton.addEventListener('click', () => {
             inputText.value = " ";
         })
 })
+
+
+
+// btn[3]?.addEventListener('click', () => {
+//     if (box[3].style.display !== "none") {
+//         box[3].style.display = "none"
+//     } else {
+//         box[3].style.display = "block"
+//         box[3].style.backgroundColor = "#1FC2AE";   
+//     }
+// });
