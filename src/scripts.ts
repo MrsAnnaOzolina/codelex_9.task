@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const allData = document.querySelector<HTMLDivElement>('.cards');
+const cards = document.querySelector<HTMLDivElement>('.cards');
 const addButton = document.querySelector<HTMLButtonElement | null>('.addButton');
 let inputTitle = document.querySelector<HTMLInputElement | null>(".addNewItem__title");
 let inputText = document.querySelector<HTMLInputElement | null>(".addNewItem__text");
@@ -26,17 +26,17 @@ console.log("showData")
                 <h3 class="title-id-${dogs.data[i].id}">${dogs.data[i].title}</h3>
                 <p class="text-id-${dogs.data[i].id}">${dogs.data[i].text}</p>
                 <button class="edit-id-${dogs.data[i].id} waves-effect waves-light btn">Edit</button>
-                <button class="extrabutton deleteButton-id-${dogs.data[i].id} waves-effect waves-light btn" id="data-id-${dogs.data[i].id}" >Delete</button>
+                <button class="extrabutton deleteButton-id-${dogs.data[i].id} waves-effect waves-light btn">Delete</button>
                 <div ><p class="editedData-id-${dogs.data[i].id}"></p></div>
                 </div>
                 `;
 
-            allData.innerHTML = dogsCardHTML;
+            cards.innerHTML = dogsCardHTML;
         }
-    })
+    }).then(()=>{gothroughEachCard ()})
         .catch((error) => { console.log(error); })
 }
-
+let runFunction
 function gothroughEachCard (){
     axios.get<Dogs[]>('http://localhost:3004/dogs').then((dogs) => {
     for (let i = 0; i < dogs.data.length; i++){
@@ -47,7 +47,6 @@ function gothroughEachCard (){
         console.log("hi");
             axios.delete(`http://localhost:3004/dogs/${dogs.data[i].id}`).then(() => {
                 showData();
-                location.reload();
 
             })
         })
@@ -62,6 +61,7 @@ function gothroughEachCard (){
            </label>`;
             let editedTitle = document.querySelector<HTMLInputElement | null>(".changedtitle")
             let editedText = document.querySelector<HTMLInputElement | null>(".changedtext")
+
             document.querySelector(".submitbutton").addEventListener("click", () => {
                 axios.put<Dogs>(`http://localhost:3004/dogs/${dogs.data[i].id}`, {
                     id: `${dogs.data[i].id}`,
@@ -69,7 +69,9 @@ function gothroughEachCard (){
                     title: editedTitle.value,
                     text: editedText.value,
                 })
-                    .then(() => { showData();location.reload()})
+                    .then(() => { showData();
+                       runFunction = setTimeout(gothroughEachCard, 100);
+                    })
             })
         })
     } 
@@ -88,6 +90,5 @@ addButton.addEventListener('click', () => {
             showData();
             inputTitle.value = " ";
             inputText.value = " ";
-            location.reload()
         })
 })
